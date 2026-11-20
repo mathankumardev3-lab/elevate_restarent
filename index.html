@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASTE &amp; THYME — Good Food. Slow Moments. Great Memories.</title>
+
+    <!-- Google Fonts: Cormorant Garamond, Fraunces & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            DEFAULT: '#263D2B',
+                            dark: '#1A2B1E',
+                            light: '#36553D',
+                            soft: '#EAEFE9',
+                        },
+                        cream: {
+                            DEFAULT: '#F7F2E8',
+                            card: '#FCF9F3',
+                            warm: '#EFE7D6',
+                            line: '#E2D8C5',
+                        },
+                        ember: {
+                            DEFAULT: '#D97745',
+                            hover: '#BE6131',
+                            soft: '#FBECE3',
+                            glow: '#E68C5C',
+                        },
+                        ink: {
+                            DEFAULT: '#292821',
+                            muted: '#575449',
+                            soft: '#7A7668',
+                        }
+                    },
+                    fontFamily: {
+                        editorial: ['"Cormorant Garamond"', 'Fraunces', 'Georgia', 'serif'],
+                        serif: ['Fraunces', '"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'editorial': '0 14px 36px -14px rgba(38, 61, 43, 0.14), 0 4px 14px -4px rgba(41, 40, 33, 0.06)',
+                        'editorial-lg': '0 24px 54px -18px rgba(26, 43, 30, 0.24)',
+                        'ember': '0 10px 26px -6px rgba(217, 119, 69, 0.36)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-cream text-ink font-sans antialiased selection:bg-ember selection:text-white overflow-x-hidden">
+
+    <!-- ===================================================================== -->
+    <!-- 1. TOP INFORMATION BAR                                                -->
+    <!-- ===================================================================== -->
+    <div id="top-info-bar" class="bg-forest-dark text-cream text-xs border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-2">
+            <div class="flex flex-wrap items-center gap-x-5 gap-y-1 text-cream/90">
+                <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="clock" class="w-3.5 h-3.5 text-ember-glow"></i>
+                    <span>Tue–Sun 07:30–22:30 · Mon Bakery 08:00–16:00</span>
+                </span>
+                <span class="inline-flex items-center gap-1.5">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-ember-glow"></i>
+                    <span>Alwarpet, Chennai</span>
+                </span>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#reserve" class="font-semibold text-cream hover:text-ember-glow transition-colors">
+                    Quick Table Booking
+                </a>
+                <span class="text-white/25">|</span>
+                <button type="button" onclick="openWhatsAppReservation('General Table & Bakery Enquiry from Top Bar')" class="inline-flex items-center gap-1.5 font-semibold text-ember-glow hover:text-white transition-colors">
+                    <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                    <span>WhatsApp Concierge</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- 2. NAVIGATION                                                       -->
+    <!-- ===================================================================== -->
+    <header id="main-nav" class="sticky top-0 z-40 bg-forest/95 backdrop-blur-md text-cream border-b border-white/10 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="h-20 flex items-center justify-between gap-4">
+                <!-- Brand Wordmark -->
+                <a href="#hero" class="flex items-center gap-3 group shrink-0">
+                    <div class="w-11 h-11 rounded-2xl bg-forest-light border border-ember/45 flex items-center justify-center text-ember-glow group-hover:border-ember-glow transition-colors">
+                        <i data-lucide="sprout" class="w-5 h-5"></i>
+                    </div>
+                    <div class="leading-none">
+                        <span class="font-editorial font-bold text-xl sm:text-2xl tracking-wide text-cream">
+                            TASTE <span class="italic text-ember-glow">&amp;</span> THYME
+                        </span>
+                        <span class="block text-[10px] font-semibold uppercase tracking-[0.22em] text-cream/70 mt-1">
+                            Kitchen · Bakery · Cafe
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-6 text-sm font-medium" aria-label="Main Navigation">
+                    <a href="#intro" class="nav-link text-cream/90 hover:text-ember-glow transition-colors">Story</a>
+                    <a href="#philosophy" class="nav-link text-cream/90 hover:text-ember-glow transition-colors">Philosophy</a>
+                    <a href="#menu" class="nav-link text-cream/90 hover:text-ember-glow transition-colors">Menu</a>
+                    <a href="#chef" class="nav-link text-cream/90 hover:text-ember-glow transition-colors">Chef</a>
+                    <a href="#gallery" class="nav-link text-cream/90 hover:text-ember-glow transition-colors">Gallery</a>
+                    <a href="#reviews" class="nav-link text-cream/90 hover:text-ember-glow transition-colors">Reviews</a>
+                    <a href="#location" class="nav-link text-cream/90 hover:text-ember-glow transition-colors">Visit</a>
+                    <a href="#contact" class="nav-link text-cream/90 hover:text-ember-glow transition-colors">Contact</a>
+                </nav>
+
+                <!-- Reserve Table CTA & Mobile Drawer Button -->
+                <div class="flex items-center gap-2.5">
+                    <a href="#reserve" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-ember hover:bg-ember-hover text-white shadow-ember transition-all active:scale-[0.98]">
+                        <i data-lucide="calendar-check" class="w-4 h-4"></i>
+                        <span>Reserve Table</span>
+                    </a>
+
+                    <button type="button" id="mobile-nav-btn" onclick="toggleMobileNav()" aria-label="Toggle Mobile Menu" aria-expanded="false" class="lg:hidden p-2.5 rounded-xl bg-forest-light/70 hover:bg-forest-light text-cream border border-white/15 transition-colors">
+                        <i id="nav-icon-menu" data-lucide="menu" class="w-5 h-5"></i>
+                        <i id="nav-icon-close" data-lucide="x" class="w-5 h-5 hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Collapsible Drawer -->
+        <div id="mobile-nav-drawer" class="hidden lg:hidden bg-forest-dark border-t border-white/10 px-4 py-5 space-y-1.5">
+            <a href="#intro" onclick="closeMobileNav()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-cream hover:bg-forest-light">Story &amp; Dining Room</a>
+            <a href="#philosophy" onclick="closeMobileNav()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-cream hover:bg-forest-light">Our Philosophy</a>
+            <a href="#signatures" onclick="closeMobileNav()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-cream hover:bg-forest-light">Signature Dishes</a>
+            <a href="#menu" onclick="closeMobileNav()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-cream hover:bg-forest-light">Full Menu</a>
+            <a href="#chef" onclick="closeMobileNav()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-cream hover:bg-forest-light">Meet the Chef</a>
+            <a href="#gallery" onclick="closeMobileNav()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-cream hover:bg-forest-light">Food Gallery</a>
+            <a href="#reviews" onclick="closeMobileNav()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-cream hover:bg-forest-light">Customer Reviews</a>
+            <a href="#location" onclick="closeMobileNav()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-cream hover:bg-forest-light">Hours &amp; Location</a>
+            <a href="#contact" onclick="closeMobileNav()" class="block px-4 py-2.5 rounded-xl text-sm font-medium text-cream hover:bg-forest-light">Contact</a>
+            <div class="pt-3 border-t border-white/10 flex flex-col gap-2">
+                <a href="#reserve" onclick="closeMobileNav()" class="w-full py-3 px-4 rounded-xl text-sm font-bold bg-ember hover:bg-ember-hover text-white text-center shadow-ember">
+                    Reserve Table Online
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ================================================================= -->
+        <!-- 3. HERO SECTION                                                   -->
+        <!-- ================================================================= -->
+        <section id="hero" class="relative bg-forest text-cream overflow-hidden border-b border-forest-dark/20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                    <!-- Hero Copy -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest-light border border-ember/40 text-ember-glow text-xs font-semibold tracking-wider uppercase">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                            <span>Autumn Harvest Menu · Freshly Baked Daily</span>
+                        </div>
+
+                        <h1 class="font-editorial text-4xl sm:text-5xl xl:text-6xl font-bold leading-[1.06] tracking-tight text-cream">
+                            Good Food. <span class="italic text-ember-glow">Slow Moments.</span> Great Memories.
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-cream/85 leading-relaxed max-w-xl">
+                            An unhurried neighborhood kitchen, artisan bakery, and sunlit cafe celebrating heirloom grains, wood-fired warmth, and seasonal ingredients gathered at their peak.
+                        </p>
+
+                        <!-- Dual CTAs -->
+                        <div class="flex flex-wrap items-center gap-3.5 pt-1">
+                            <a href="#menu" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold bg-ember hover:bg-ember-hover text-white shadow-ember transition-all active:scale-[0.98]">
+                                <span>Explore Menu</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+
+                            <a href="#reserve" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold bg-cream hover:bg-cream-warm text-forest transition-all active:scale-[0.98]">
+                                <i data-lucide="utensils" class="w-4 h-4 text-ember"></i>
+                                <span>Reserve Table</span>
+                            </a>
+                        </div>
+
+                        <!-- Seasonal Note -->
+                        <div class="pt-4 border-t border-white/15 flex items-start gap-3 text-xs sm:text-sm text-cream/80 max-w-xl">
+                            <i data-lucide="leaf" class="w-4 h-4 text-ember-glow shrink-0 mt-1"></i>
+                            <p><strong class="text-cream">Seasonal Note:</strong> Our wild-levain sourdough loaves leave the oven at 07:30 and 12:00 daily; evening tables feature hearth-roasted squash, citrus-cured seafood, and botanical infusions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Large Hero Food Photograph -->
+                    <div class="lg:col-span-6">
+                        <div class="relative rounded-3xl overflow-hidden border border-white/20 ring-1 ring-ember-glow/30 shadow-editorial-lg photo-zoom-frame group bg-forest-dark">
+                            <div class="aspect-[4/3] w-full overflow-hidden">
+                                <img
+                                    src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=85"
+                                    alt="Seasonal plated dishes and fresh herbs served on a warm table at Taste & Thyme"
+                                    onerror="handleMediaFallback(this, 'plate', 'w-20 h-20 text-ember-glow')"
+                                    class="w-full h-full object-cover"
+                                >
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/85 via-forest-dark/20 to-transparent pointer-events-none"></div>
+                            <div class="absolute top-4 right-4 hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-forest-dark/80 backdrop-blur-xs border border-white/15 text-[11px] font-semibold text-cream/90 pointer-events-none">
+                                <i data-lucide="clock-3" class="w-3.5 h-3.5 text-ember-glow"></i>
+                                <span>Served All Day</span>
+                            </div>
+                            <div class="absolute bottom-5 left-5 right-5 flex flex-wrap items-end justify-between gap-3 pointer-events-none">
+                                <div>
+                                    <span class="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider bg-ember text-white mb-1.5">
+                                        Chef’s Table Selection
+                                    </span>
+                                    <p class="font-editorial text-xl sm:text-2xl font-bold text-white">
+                                        Roasted Heirloom Squash, Whipped Ricotta &amp; Thyme
+                                    </p>
+                                    <p class="text-xs text-cream/80 mt-0.5">
+                                        Paired naturally with Garden Thyme &amp; Lemon Cooler
+                                    </p>
+                                </div>
+                                <span class="px-3.5 py-1.5 rounded-xl bg-cream text-forest font-bold text-sm shadow-sm">
+                                    ₹540
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 4. RESTAURANT INTRODUCTION                                        -->
+        <!-- ================================================================= -->
+        <section id="intro" class="py-16 lg:py-24 bg-cream bg-botanical-grain border-b border-cream-line">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                    <div class="lg:col-span-6">
+                        <div class="grid grid-cols-2 gap-4 sm:gap-5">
+                            <div class="relative rounded-2xl overflow-hidden border border-forest/15 shadow-editorial photo-zoom-frame aspect-[3/4] bg-cream-warm">
+                                <img
+                                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
+                                    alt="Warm timber dining room and candlelit tables at Taste & Thyme"
+                                    loading="lazy"
+                                    onerror="handleMediaFallback(this, 'dining', 'w-14 h-14 text-forest')"
+                                    class="w-full h-full object-cover"
+                                >
+                                <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-lg bg-forest-dark/80 text-cream text-[11px] font-semibold backdrop-blur-2xs">
+                                    Warm Dining Room
+                                </span>
+                            </div>
+                            <div class="relative rounded-2xl overflow-hidden border border-forest/15 shadow-editorial photo-zoom-frame aspect-[3/4] mt-7 bg-cream-warm">
+                                <img
+                                    src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80"
+                                    alt="Crusty artisan sourdough loaves and morning bakes"
+                                    loading="lazy"
+                                    onerror="handleMediaFallback(this, 'bakery', 'w-14 h-14 text-ember')"
+                                    class="w-full h-full object-cover"
+                                >
+                                <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-lg bg-cream-card/90 text-forest text-[11px] font-bold border border-cream-line">
+                                    Wild Levain Hearth
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6 space-y-5">
+                        <div class="editorial-divider text-xs font-bold uppercase tracking-[0.2em] text-ember">
+                            <i data-lucide="leaf" class="w-3.5 h-3.5"></i>
+                            <span>Our Dining Room &amp; Bakery</span>
+                        </div>
+
+                        <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-forest leading-[1.1]">
+                            A Sanctuary for Unhurried Mornings &amp; Warm Evenings
+                        </h2>
+
+                        <p class="text-ink-muted text-sm sm:text-base leading-relaxed">
+                            Designed around natural oak, linen textures, and a sunlit open bakery counter, <strong class="text-ink">TASTE &amp; THYME</strong> brings together the comfort of a neighborhood cafe and the craft of a modern seasonal kitchen.
+                        </p>
+
+                        <p class="text-ink-muted text-sm sm:text-base leading-relaxed">
+                            Whether you stop by at dawn for warm cardamom buns and pour-over coffee, linger over midday plates with friends, or gather for an unhurried dinner by warm glow light, every detail is paced for genuine connection.
+                        </p>
+
+                        <div class="grid grid-cols-3 gap-4 pt-4 border-t border-cream-line">
+                            <div>
+                                <p class="font-editorial text-2xl sm:text-3xl font-bold text-forest">36h</p>
+                                <p class="text-xs text-ink-muted">Natural Fermentation</p>
+                            </div>
+                            <div>
+                                <p class="font-editorial text-2xl sm:text-3xl font-bold text-ember">Farm-Direct</p>
+                                <p class="text-xs text-ink-muted">Herbs &amp; Produce</p>
+                            </div>
+                            <div>
+                                <p class="font-editorial text-2xl sm:text-3xl font-bold text-forest">All-Day</p>
+                                <p class="text-xs text-ink-muted">Bakery to Dinner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 5. OUR PHILOSOPHY                                                 -->
+        <!-- ================================================================= -->
+        <section id="philosophy" class="py-16 lg:py-24 bg-cream-card border-b border-cream-line">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl mb-12">
+                    <div class="editorial-divider text-xs font-bold uppercase tracking-[0.2em] text-ember mb-2">
+                        <i data-lucide="sprout" class="w-3.5 h-3.5"></i>
+                        <span>Our Philosophy</span>
+                    </div>
+                    <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-forest leading-tight">
+                        Guided by Season, Patience &amp; Honest Craft
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                    <!-- Pillar 1 -->
+                    <div class="editorial-card bg-cream p-7 border border-cream-line shadow-editorial">
+                        <div class="w-12 h-12 rounded-2xl bg-forest text-ember-glow flex items-center justify-center mb-5">
+                            <i data-lucide="carrot" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-editorial text-2xl font-bold text-forest mb-2.5">Seasonal Ingredients</h3>
+                        <p class="text-sm text-ink-muted leading-relaxed">
+                            Our menu shifts with harvest cycles—pairing heirloom vegetables, stone-milled flours, fragrant garden herbs, and small-batch dairy without shortcuts.
+                        </p>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="editorial-card bg-cream p-7 border border-cream-line shadow-editorial">
+                        <div class="w-12 h-12 rounded-2xl bg-ember text-white flex items-center justify-center mb-5">
+                            <i data-lucide="hourglass" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-editorial text-2xl font-bold text-forest mb-2.5">Unhurried Dining</h3>
+                        <p class="text-sm text-ink-muted leading-relaxed">
+                            Good food asks for unhurried moments. We pace courses naturally, welcome lingering conversation, and craft a calm room free of rush.
+                        </p>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="editorial-card bg-cream p-7 border border-cream-line shadow-editorial">
+                        <div class="w-12 h-12 rounded-2xl bg-forest text-ember-glow flex items-center justify-center mb-5">
+                            <i data-lucide="flame" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-editorial text-2xl font-bold text-forest mb-2.5">Open-Fire &amp; Slow Craft</h3>
+                        <p class="text-sm text-ink-muted leading-relaxed">
+                            From slow-proofed doughs and house-churned herb butters to wood-kissed roasting and careful reductions, depth comes from time and technique.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 6. SIGNATURE DISHES                                               -->
+        <!-- ================================================================= -->
+        <section id="signatures" class="py-16 lg:py-24 bg-cream bg-botanical-grain border-b border-cream-line">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+                    <div>
+                        <div class="editorial-divider text-xs font-bold uppercase tracking-[0.2em] text-ember mb-2">
+                            <i data-lucide="flame" class="w-3.5 h-3.5"></i>
+                            <span>House Favorites</span>
+                        </div>
+                        <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-forest">Signature Dishes</h2>
+                    </div>
+                    <a href="#menu" class="inline-flex items-center gap-1.5 text-sm font-bold text-forest hover:text-ember transition-colors">
+                        <span>Browse Full Menu</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div id="signature-dishes-grid" class="grid grid-cols-1 md:grid-cols-3 gap-7">
+                    <!-- Rendered dynamically via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 7. MENU CATEGORIES                                                -->
+        <!-- ================================================================= -->
+        <section id="menu-categories-section" class="py-16 lg:py-20 bg-cream-card border-b border-cream-line">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-xs font-bold uppercase tracking-[0.2em] text-ember">Curated Chapters</span>
+                    <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-forest mt-1.5">Explore by Menu Category</h2>
+                    <p class="text-sm text-ink-muted mt-1.5">Select any category to jump straight to that course in our full menu below.</p>
+                </div>
+
+                <div id="visual-category-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <!-- Rendered dynamically via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 8. FULL MENU SECTION                                              -->
+        <!-- ================================================================= -->
+        <section id="menu" class="py-16 lg:py-24 bg-cream bg-botanical-grain border-b border-cream-line">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+                    <div>
+                        <div class="editorial-divider text-xs font-bold uppercase tracking-[0.2em] text-ember mb-2">
+                            <i data-lucide="utensils-crossed" class="w-3.5 h-3.5"></i>
+                            <span>Full Kitchen &amp; Bakery Ledger</span>
+                        </div>
+                        <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-forest">The Seasonal Menu</h2>
+                    </div>
+
+                    <!-- Search & Dietary Filter Controls -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                        <div class="relative">
+                            <i data-lucide="search" class="w-4 h-4 text-ink-soft absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                            <input
+                                id="menu-search-input"
+                                type="search"
+                                oninput="renderFullMenu()"
+                                placeholder="Search dishes or ingredients..."
+                                class="w-full sm:w-60 pl-10 pr-4 py-2.5 rounded-xl text-sm bg-cream-card border border-cream-line text-ink placeholder:text-ink-soft focus:bg-white focus:outline-none focus:ring-2 focus:ring-ember/30 focus:border-ember"
+                            >
+                        </div>
+
+                        <select id="menu-dietary-filter" onchange="renderFullMenu()" aria-label="Filter by Dietary Preference" class="px-4 py-2.5 rounded-xl text-sm font-semibold bg-cream-card border border-cream-line text-forest focus:bg-white focus:outline-none focus:ring-2 focus:ring-ember/30 focus:border-ember">
+                            <option value="All">All Dietary Options</option>
+                            <option value="Vegetarian">Vegetarian</option>
+                            <option value="Vegan">Vegan</option>
+                            <option value="Chef Signature">Chef Signature</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Menu Category Tabs -->
+                <div id="full-menu-tabs" class="flex flex-wrap gap-2 pb-6 mb-8 border-b border-cream-line" role="tablist" aria-label="Menu Category Tabs">
+                    <!-- Rendered dynamically via JavaScript -->
+                </div>
+
+                <!-- Filtered Menu Items Grid -->
+                <div id="full-menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Rendered dynamically via JavaScript -->
+                </div>
+
+                <!-- Empty Menu Filter State -->
+                <div id="menu-empty-state" class="hidden text-center py-14 px-4 rounded-2xl bg-cream-card border border-cream-line mt-4">
+                    <p class="font-editorial text-2xl font-bold text-forest">No dishes match your filter</p>
+                    <p class="text-sm text-ink-muted mt-1">Try clearing your search term or switching back to All categories.</p>
+                    <button type="button" onclick="resetMenuFilters()" class="mt-4 px-5 py-2.5 rounded-xl text-xs font-bold bg-ember hover:bg-ember-hover text-white transition-colors">
+                        Reset Menu Filters
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 9. CHEF INTRODUCTION                                              -->
+        <!-- ================================================================= -->
+        <section id="chef" class="py-16 lg:py-24 bg-cream-card border-b border-cream-line">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                    <div class="lg:col-span-5">
+                        <div class="rounded-3xl overflow-hidden border border-forest/15 shadow-editorial-lg photo-zoom-frame bg-cream aspect-[4/5]">
+                            <img
+                                src="https://images.unsplash.com/photo-1577219491135-ce391730fb4c?auto=format&fit=crop&w=900&q=80"
+                                alt="Executive Chef Devika Menon plating seasonal herbs in the Taste & Thyme kitchen"
+                                loading="lazy"
+                                onerror="handleMediaFallback(this, 'chef', 'w-16 h-16 text-forest')"
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-5">
+                        <div class="editorial-divider text-xs font-bold uppercase tracking-[0.2em] text-ember">
+                            <i data-lucide="chef-hat" class="w-3.5 h-3.5"></i>
+                            <span>Meet the Culinary Lead</span>
+                        </div>
+
+                        <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-forest leading-tight">
+                            Chef Devika Menon &amp; The Hearth Team
+                        </h2>
+
+                        <p class="font-editorial italic text-xl sm:text-2xl text-forest-light">
+                            “Great cooking respects the ingredient first—giving herbs, grains, and fire enough quiet room to speak.”
+                        </p>
+
+                        <p class="text-sm sm:text-base text-ink-muted leading-relaxed">
+                            Trained across artisan bakeries and seasonal kitchens, Chef Devika leads <strong class="text-ink">TASTE &amp; THYME</strong> with a focus on fermentation, bright acidity, and comforting textures. Every dish balances familiar warmth with thoughtful culinary detail.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3">
+                            <div class="p-4 rounded-2xl bg-cream border border-cream-line">
+                                <p class="text-xs font-bold uppercase tracking-wider text-ember">Bakery &amp; Pastry Craft</p>
+                                <p class="text-sm text-ink mt-1">Wild-starter sourdough, laminated viennoiserie &amp; fruit tarts baked before dawn.</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-cream border border-cream-line">
+                                <p class="text-xs font-bold uppercase tracking-wider text-forest">Seasonal Kitchen Ethos</p>
+                                <p class="text-sm text-ink mt-1">House-made pickles, herb oils, broths, and infusions crafted in small batches.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 10. FOOD GALLERY                                                  -->
+        <!-- ================================================================= -->
+        <section id="gallery" class="py-16 lg:py-24 bg-cream bg-botanical-grain border-b border-cream-line">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+                    <div>
+                        <div class="editorial-divider text-xs font-bold uppercase tracking-[0.2em] text-ember mb-2">
+                            <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+                            <span>Visual Journal</span>
+                        </div>
+                        <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-forest">Food &amp; Table Gallery</h2>
+                        <p class="text-sm text-ink-muted mt-1.5">Click any photograph to open the lightbox gallery with next/previous browsing.</p>
+                    </div>
+
+                    <!-- Gallery Filter Buttons -->
+                    <div id="gallery-filter-buttons" class="flex flex-wrap gap-2">
+                        <!-- Rendered dynamically via JavaScript -->
+                    </div>
+                </div>
+
+                <div id="food-gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Rendered dynamically via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 11. CUSTOMER REVIEWS                                              -->
+        <!-- ================================================================= -->
+        <section id="reviews" class="py-16 lg:py-24 bg-cream-card border-b border-cream-line">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl mb-12">
+                    <div class="editorial-divider text-xs font-bold uppercase tracking-[0.2em] text-ember mb-2">
+                        <i data-lucide="quote" class="w-3.5 h-3.5"></i>
+                        <span>Guest Reflections</span>
+                    </div>
+                    <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-forest">What Our Guests Say</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                    <article class="editorial-card bg-cream p-7 border border-cream-line shadow-editorial flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-1 text-ember" aria-label="5 out of 5 stars">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-forest-light">Weekend Brunch</span>
+                            </div>
+                            <p class="font-editorial italic text-xl text-ink leading-relaxed">
+                                “The cardamom morning bun and sourdough tartine felt like a quiet escape. Nothing rushed, every plate balanced and warm.”
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-cream-line">
+                            <p class="font-bold text-sm text-forest">Nandini Raghavan</p>
+                            <p class="text-xs text-ink-soft">Architect &amp; Regular Guest</p>
+                        </div>
+                    </article>
+
+                    <article class="editorial-card bg-forest text-cream p-7 border border-forest-dark shadow-editorial-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-1 text-ember-glow" aria-label="5 out of 5 stars">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-ember-glow">Evening Dining</span>
+                            </div>
+                            <p class="font-editorial italic text-xl text-cream leading-relaxed">
+                                “We celebrated a milestone dinner here—the roasted squash tart, herb-glazed chicken bowl, and attentive pacing made it unforgettable.”
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/15">
+                            <p class="font-bold text-sm text-white">Karthik Subramanian</p>
+                            <p class="text-xs text-cream/70">Design Studio Founder</p>
+                        </div>
+                    </article>
+
+                    <article class="editorial-card bg-cream p-7 border border-cream-line shadow-editorial flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-1 text-ember" aria-label="5 out of 5 stars">
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-forest-light">Cafe &amp; Bakery</span>
+                            </div>
+                            <p class="font-editorial italic text-xl text-ink leading-relaxed">
+                                “Easily my favorite spot for morning coffee and reading. The citrus cold brew and fig almond tart are staples every week.”
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-cream-line">
+                            <p class="font-bold text-sm text-forest">Meera Krishnan</p>
+                            <p class="text-xs text-ink-soft">Editorial Writer</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 12. TABLE RESERVATION                                             -->
+        <!-- ================================================================= -->
+        <section id="reserve" class="py-16 lg:py-24 bg-cream bg-botanical-grain border-b border-cream-line">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl mb-10">
+                    <div class="editorial-divider text-xs font-bold uppercase tracking-[0.2em] text-ember mb-2">
+                        <i data-lucide="calendar-heart" class="w-3.5 h-3.5"></i>
+                        <span>Book Your Table</span>
+                    </div>
+                    <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-forest">Reserve a Table at Taste &amp; Thyme</h2>
+                    <p class="text-sm sm:text-base text-ink-muted mt-2">
+                        Choose your preferred date, time slot, party size, and seating room—or send your reservation directly via WhatsApp.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <!-- Reservation Form -->
+                    <div class="lg:col-span-7 bg-cream-card rounded-3xl border border-cream-line p-6 sm:p-8 shadow-editorial">
+                        <form id="table-reservation-form" onsubmit="handleReservationSubmit(event)" novalidate class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="res-guest-name" class="block text-xs font-bold uppercase tracking-wider text-forest mb-1.5">Guest Name *</label>
+                                    <input id="res-guest-name" type="text" oninput="syncReservationPreview()" placeholder="e.g., Ananya Nair" class="w-full px-4 py-2.5 rounded-xl text-sm bg-cream border border-cream-line text-ink placeholder:text-ink-soft focus:bg-white focus:outline-none focus:ring-2 focus:ring-ember/30 focus:border-ember">
+                                    <p id="res-error-name" class="hidden text-xs font-medium text-red-700 mt-1">Please enter your full name.</p>
+                                </div>
+
+                                <div>
+                                    <label for="res-guest-contact" class="block text-xs font-bold uppercase tracking-wider text-forest mb-1.5">Phone or Email *</label>
+                                    <input id="res-guest-contact" type="text" oninput="syncReservationPreview()" placeholder="+91 98400 11223 or email" class="w-full px-4 py-2.5 rounded-xl text-sm bg-cream border border-cream-line text-ink placeholder:text-ink-soft focus:bg-white focus:outline-none focus:ring-2 focus:ring-ember/30 focus:border-ember">
+                                    <p id="res-error-contact" class="hidden text-xs font-medium text-red-700 mt-1">Please enter a valid phone number or email.</p>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div>
+                                    <label for="res-date" class="block text-xs font-bold uppercase tracking-wider text-forest mb-1.5">Date *</label>
+                                    <input id="res-date" type="date" onchange="syncReservationPreview()" class="w-full px-3.5 py-2.5 rounded-xl text-sm bg-cream border border-cream-line text-ink font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-ember/30 focus:border-ember">
+                                    <p id="res-error-date" class="hidden text-xs font-medium text-red-700 mt-1">Please choose today or a future date.</p>
+                                </div>
+
+                                <div>
+                                    <label for="res-time" class="block text-xs font-bold uppercase tracking-wider text-forest mb-1.5">Time Slot *</label>
+                                    <select id="res-time" onchange="syncReservationPreview()" class="w-full px-3.5 py-2.5 rounded-xl text-sm bg-cream border border-cream-line text-ink font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-ember/30 focus:border-ember">
+                                        <option value="08:30 AM">08:30 AM (Breakfast)</option>
+                                        <option value="10:30 AM">10:30 AM (Brunch)</option>
+                                        <option value="01:00 PM">01:00 PM (Lunch)</option>
+                                        <option value="04:30 PM">04:30 PM (Cafe &amp; Tea)</option>
+                                        <option value="07:30 PM" selected>07:30 PM (Dinner)</option>
+                                        <option value="09:00 PM">09:00 PM (Late Dinner)</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="res-guests" class="block text-xs font-bold uppercase tracking-wider text-forest mb-1.5">Guests *</label>
+                                    <select id="res-guests" onchange="syncReservationPreview()" class="w-full px-3.5 py-2.5 rounded-xl text-sm bg-cream border border-cream-line text-ink font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-ember/30 focus:border-ember">
+                                        <option value="1 Guest">1 Guest</option>
+                                        <option value="2 Guests" selected>2 Guests</option>
+                                        <option value="3 Guests">3 Guests</option>
+                                        <option value="4 Guests">4 Guests</option>
+                                        <option value="5 Guests">5 Guests</option>
+                                        <option value="6 Guests">6 Guests</option>
+                                        <option value="7+ Guests (Group Table)">7+ Guests (Group)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="res-seating" class="block text-xs font-bold uppercase tracking-wider text-forest mb-1.5">Seating Preference</label>
+                                <select id="res-seating" onchange="syncReservationPreview()" class="w-full px-4 py-2.5 rounded-xl text-sm bg-cream border border-cream-line text-ink font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-ember/30 focus:border-ember">
+                                    <option value="Main Dining Room">Main Dining Room (Warm Timber &amp; Linen)</option>
+                                    <option value="Garden Courtyard">Garden Courtyard (Breezy Greenery)</option>
+                                    <option value="Bakery & Espresso Counter">Bakery &amp; Espresso Counter</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="res-notes" class="block text-xs font-bold uppercase tracking-wider text-forest mb-1.5">Special Requests or Notes</label>
+                                <textarea id="res-notes" rows="3" oninput="syncReservationPreview()" placeholder="Celebration note, high chair, dietary allergies, or window table request..." class="w-full px-4 py-2.5 rounded-xl text-sm bg-cream border border-cream-line text-ink placeholder:text-ink-soft focus:bg-white focus:outline-none focus:ring-2 focus:ring-ember/30 focus:border-ember"></textarea>
+                            </div>
+
+                            <!-- Submit & WhatsApp Reservation Buttons -->
+                            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+                                <button type="submit" class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold bg-ember hover:bg-ember-hover text-white shadow-ember transition-all active:scale-[0.98]">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                                    <span>Confirm Reservation</span>
+                                </button>
+
+                                <button type="button" onclick="reserveViaWhatsAppFromForm()" class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-bold bg-forest hover:bg-forest-light text-cream transition-all">
+                                    <i data-lucide="message-circle" class="w-4 h-4 text-ember-glow"></i>
+                                    <span>Reserve via WhatsApp</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Live Summary & Reservation Success Card -->
+                    <div class="lg:col-span-5 space-y-5">
+                        <div id="reservation-status-box" class="bg-forest text-cream rounded-3xl border border-forest-dark p-6 sm:p-8 shadow-editorial-lg space-y-5">
+                            <div class="flex items-center justify-between border-b border-white/15 pb-4">
+                                <div>
+                                    <span id="res-badge" class="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-ember text-white">
+                                        Reservation Preview
+                                    </span>
+                                    <h3 id="res-heading" class="font-editorial text-2xl sm:text-3xl font-bold text-white mt-1.5">
+                                        Your Table Details
+                                    </h3>
+                                </div>
+                                <span id="res-ref-code" class="font-mono text-xs font-bold px-3 py-1 rounded-lg bg-forest-light text-ember-glow border border-white/15">
+                                    TT-OPEN
+                                </span>
+                            </div>
+
+                            <!-- Success Message Banner (Shown on valid submission) -->
+                            <div id="res-success-banner" class="hidden p-4 rounded-2xl bg-ember/20 border border-ember-glow/50 text-cream text-xs sm:text-sm leading-relaxed">
+                                <p class="font-bold text-ember-glow mb-0.5">Reservation Confirmed!</p>
+                                <p id="res-success-text"></p>
+                            </div>
+
+                            <dl class="space-y-3 text-sm">
+                                <div class="flex items-center justify-between gap-3 py-1.5 border-b border-white/10">
+                                    <dt class="text-cream/70">Party Size</dt>
+                                    <dd id="preview-guests" class="font-bold text-white">2 Guests</dd>
+                                </div>
+                                <div class="flex items-center justify-between gap-3 py-1.5 border-b border-white/10">
+                                    <dt class="text-cream/70">Date &amp; Time</dt>
+                                    <dd id="preview-datetime" class="font-bold text-ember-glow text-right">Today · 07:30 PM</dd>
+                                </div>
+                                <div class="flex items-center justify-between gap-3 py-1.5 border-b border-white/10">
+                                    <dt class="text-cream/70">Seating</dt>
+                                    <dd id="preview-seating" class="font-bold text-white text-right">Main Dining Room</dd>
+                                </div>
+                                <div class="flex items-center justify-between gap-3 py-1.5">
+                                    <dt class="text-cream/70">Guest</dt>
+                                    <dd id="preview-guest" class="font-semibold text-cream/90 text-right">Walk-in / Pending Name</dd>
+                                </div>
+                            </dl>
+
+                            <p class="text-xs text-cream/75 leading-relaxed bg-forest-dark/65 p-3.5 rounded-xl border border-white/10">
+                                Tables are held for 15 minutes past your reserved slot. Need same-day changes or group seating? Tap <strong>Reserve via WhatsApp</strong> for immediate help.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 13. OPENING HOURS, 14. LOCATION & 15. CONTACT                     -->
+        <!-- ================================================================= -->
+        <section id="location" class="py-16 lg:py-24 bg-cream-card border-b border-cream-line">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+                <!-- 13. Opening Hours & 14. Location Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <!-- 13. Opening Hours -->
+                    <div class="lg:col-span-5 bg-cream rounded-3xl border border-cream-line p-6 sm:p-8 shadow-editorial space-y-5">
+                        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-ember">
+                            <span class="w-6 h-[2px] bg-ember"></span>
+                            <span>Opening Hours</span>
+                        </div>
+                        <h2 class="font-editorial text-3xl font-bold text-forest">When We’re Open</h2>
+
+                        <div class="divide-y divide-cream-line text-sm">
+                            <div class="py-3 flex items-center justify-between gap-4">
+                                <div>
+                                    <p class="font-bold text-forest">Breakfast &amp; Morning Bakery</p>
+                                    <p class="text-xs text-ink-muted">Sourdough, pastries &amp; espresso</p>
+                                </div>
+                                <span class="font-semibold text-ink text-right">07:30 – 11:30</span>
+                            </div>
+                            <div class="py-3 flex items-center justify-between gap-4">
+                                <div>
+                                    <p class="font-bold text-forest">Lunch &amp; Midday Plates</p>
+                                    <p class="text-xs text-ink-muted">Small plates, grain bowls &amp; tartines</p>
+                                </div>
+                                <span class="font-semibold text-ink text-right">12:00 – 16:00</span>
+                            </div>
+                            <div class="py-3 flex items-center justify-between gap-4">
+                                <div>
+                                    <p class="font-bold text-forest">Evening &amp; Dinner Service</p>
+                                    <p class="text-xs text-ink-muted">Hearth mains, desserts &amp; infusions</p>
+                                </div>
+                                <span class="font-semibold text-ink text-right">18:30 – 22:30</span>
+                            </div>
+                            <div class="py-3 flex items-center justify-between gap-4">
+                                <div>
+                                    <p class="font-bold text-ember">Weekend Slow Brunch</p>
+                                    <p class="text-xs text-ink-muted">Sat &amp; Sun · Extended until 23:00</p>
+                                </div>
+                                <span class="font-bold text-ember text-right">08:00 – 15:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 14. Location & Interactive Directions Card -->
+                    <div class="lg:col-span-7 bg-cream rounded-3xl border border-cream-line overflow-hidden shadow-editorial">
+                        <div class="relative h-60 bg-forest-soft p-6 flex flex-col justify-between overflow-hidden border-b border-cream-line">
+                            <!-- Clean Architectural Map Illustration SVG -->
+                            <svg class="absolute inset-0 w-full h-full opacity-75" viewBox="0 0 600 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="600" height="260" fill="#EAEFE9"/>
+                                <path d="M0 70H600" stroke="#FFFFFF" stroke-width="12"/>
+                                <path d="M0 175H600" stroke="#FFFFFF" stroke-width="14"/>
+                                <path d="M165 0V260" stroke="#FFFFFF" stroke-width="12"/>
+                                <path d="M410 0V260" stroke="#FFFFFF" stroke-width="14"/>
+                                <circle cx="310" cy="122" r="32" fill="#D97745" fill-opacity="0.2"/>
+                                <circle cx="310" cy="122" r="12" fill="#D97745"/>
+                                <circle cx="310" cy="122" r="4.5" fill="#FFFFFF"/>
+                            </svg>
+
+                            <div class="relative z-10 flex flex-wrap items-center justify-between gap-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-bold bg-forest text-cream shadow-xs">
+                                    24 TTK Road, Alwarpet, Chennai
+                                </span>
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-cream-card text-forest border border-cream-line">
+                                    Courtyard Valet Available
+                                </span>
+                            </div>
+
+                            <div class="relative z-10 bg-cream-card/95 backdrop-blur-xs p-4 rounded-2xl border border-cream-line flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                <div>
+                                    <p class="font-editorial text-lg font-bold text-forest">Find Us in Tree-Lined Alwarpet</p>
+                                    <p class="text-xs text-ink-muted">7-minute walk from Mylapore station · Shaded garden entrance</p>
+                                </div>
+                                <button type="button" onclick="toggleLocationDirections()" class="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold bg-forest hover:bg-forest-light text-cream shrink-0 transition-colors">
+                                    <i data-lucide="navigation" class="w-3.5 h-3.5 text-ember-glow"></i>
+                                    <span id="directions-btn-label">Show Directions</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="location-directions-drawer" class="hidden px-6 py-4 bg-forest-soft border-b border-cream-line text-xs sm:text-sm text-ink space-y-1.5">
+                            <p class="font-bold text-forest">Arrival &amp; Parking Notes:</p>
+                            <p>• <strong>Arrival:</strong> Enter through the green courtyard gate along TTK Road; our host desk is right beside the sunlit bakery counter.</p>
+                            <p>• <strong>Parking &amp; Transit:</strong> Complimentary valet parking is open daily; accessible ground-floor seating is available throughout.</p>
+                        </div>
+
+                        <div class="p-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="car" class="w-4 h-4 text-ember shrink-0 mt-1"></i>
+                                <div>
+                                    <p class="font-bold text-forest">Parking &amp; Drop-Off</p>
+                                    <p class="text-ink-muted mt-0.5">Dedicated courtyard valet &amp; two-wheeler bay right at the gate.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="train-front" class="w-4 h-4 text-ember shrink-0 mt-1"></i>
+                                <div>
+                                    <p class="font-bold text-forest">Nearby Landmarks</p>
+                                    <p class="text-ink-muted mt-0.5">Close to Luz Corner, Mylapore avenue &amp; central botanical parks.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. Contact Section -->
+                <div id="contact" class="pt-4">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <div class="lg:col-span-5 space-y-5">
+                            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-ember">
+                                <span class="w-6 h-[2px] bg-ember"></span>
+                                <span>Contact &amp; Inquiries</span>
+                            </div>
+                            <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-forest">Speak With Our Team</h2>
+                            <p class="text-sm text-ink-muted leading-relaxed">
+                                Planning a small celebration, pre-ordering whole sourdough loaves or tarts, or asking about allergens? Reach out anytime.
+                            </p>
+
+                            <div class="space-y-3 text-sm">
+                                <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-cream border border-cream-line">
+                                    <i data-lucide="phone" class="w-4 h-4 text-ember shrink-0"></i>
+                                    <span class="font-semibold text-forest">+91 44 2499 8810</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-cream border border-cream-line">
+                                    <i data-lucide="mail" class="w-4 h-4 text-ember shrink-0"></i>
+                                    <span class="font-semibold text-forest">hello@tasteandthyme.example</span>
+                                </div>
+                            </div>
+
+                            <button type="button" onclick="openWhatsAppReservation('Direct Message from Contact Section')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-bold bg-ember hover:bg-ember-hover text-white shadow-ember transition-all">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span>Chat on WhatsApp</span>
+                            </button>
+                        </div>
+
+                        <div class="lg:col-span-7 bg-cream rounded-3xl border border-cream-line p-6 sm:p-8 shadow-editorial">
+                            <div id="contact-feedback-banner" class="hidden mb-5 p-4 rounded-2xl bg-forest text-cream text-xs sm:text-sm border border-ember/50">
+                                <p id="contact-feedback-text"></p>
+                            </div>
+
+                            <form id="contact-inquiry-form" onsubmit="handleContactInquiry(event)" novalidate class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="inq-name" class="block text-xs font-bold uppercase tracking-wider text-forest mb-1.5">Your Name *</label>
+                                        <input id="inq-name" type="text" placeholder="Your name" class="w-full px-4 py-2.5 rounded-xl text-sm bg-cream-card border border-cream-line text-ink focus:bg-white focus:outline-none focus:ring-2 focus:ring-ember/30 focus:border-ember">
+                                        <p id="inq-err-name" class="hidden text-xs text-red-700 mt-1">Please enter your name.</p>
+                                    </div>
+                                    <div>
+                                        <label for="inq-email" class="block text-xs font-bold uppercase tracking-wider text-forest mb-1.5">Email Address *</label>
+                                        <input id="inq-email" type="email" placeholder="you@example.com" class="w-full px-4 py-2.5 rounded-xl text-sm bg-cream-card border border-cream-line text-ink focus:bg-white focus:outline-none focus:ring-2 focus:ring-ember/30 focus:border-ember">
+                                        <p id="inq-err-email" class="hidden text-xs text-red-700 mt-1">Please enter a valid email address.</p>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="inq-message" class="block text-xs font-bold uppercase tracking-wider text-forest mb-1.5">Message *</label>
+                                    <textarea id="inq-message" rows="4" placeholder="Tell us about your bakery pre-order, table question, or feedback..." class="w-full px-4 py-2.5 rounded-xl text-sm bg-cream-card border border-cream-line text-ink focus:bg-white focus:outline-none focus:ring-2 focus:ring-ember/30 focus:border-ember"></textarea>
+                                    <p id="inq-err-message" class="hidden text-xs text-red-700 mt-1">Please enter at least 6 characters.</p>
+                                </div>
+
+                                <button type="submit" class="px-6 py-3 rounded-xl text-sm font-bold bg-forest hover:bg-forest-light text-cream transition-colors">
+                                    Send Inquiry
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===================================================================== -->
+    <!-- 16. FOOTER                                                            -->
+    <!-- ===================================================================== -->
+    <footer class="bg-forest-dark text-cream border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-white/10">
+                <!-- Brand & Tagline -->
+                <div class="lg:col-span-2 space-y-3">
+                    <div class="font-editorial font-bold text-2xl tracking-wide text-white">
+                        TASTE <span class="italic text-ember-glow">&amp;</span> THYME
+                    </div>
+                    <p class="font-editorial italic text-lg text-ember-glow">
+                        Good Food. Slow Moments. Great Memories.
+                    </p>
+                    <p class="text-xs sm:text-sm text-cream/75 max-w-md leading-relaxed">
+                        Seasonal kitchen, wild-levain bakery, and warm neighborhood cafe in Alwarpet, Chennai.
+                    </p>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-ember-glow mb-3.5">Explore</h3>
+                    <ul class="space-y-2 text-sm text-cream/80">
+                        <li><a href="#intro" class="hover:text-ember-glow transition-colors">Story &amp; Dining Room</a></li>
+                        <li><a href="#menu" class="hover:text-ember-glow transition-colors">Seasonal Menu</a></li>
+                        <li><a href="#gallery" class="hover:text-ember-glow transition-colors">Food Gallery</a></li>
+                        <li><a href="#reserve" class="hover:text-ember-glow transition-colors">Reserve a Table</a></li>
+                        <li><a href="#contact" class="hover:text-ember-glow transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Hours Summary & Contact -->
+                <div class="space-y-2.5 text-sm text-cream/80">
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-ember-glow mb-3.5">Visit &amp; Connect</h3>
+                    <p>Tue–Sun: 07:30 – 22:30</p>
+                    <p>Mon: 08:00 – 16:00 (Bakery &amp; Cafe)</p>
+                    <p class="text-cream font-medium pt-1">24 TTK Road, Alwarpet, Chennai</p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <button type="button" onclick="openWhatsAppReservation('Footer WhatsApp Link')" aria-label="WhatsApp" class="p-2 rounded-lg bg-forest-light hover:bg-ember text-cream transition-colors">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        </button>
+                        <a href="#contact" aria-label="Email Contact" class="p-2 rounded-lg bg-forest-light hover:bg-ember text-cream transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#gallery" aria-label="Gallery" class="p-2 rounded-lg bg-forest-light hover:bg-ember text-cream transition-colors">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-cream/65">
+                <p>© <span id="footer-copyright-year">2026</span> TASTE &amp; THYME. All rights reserved.</p>
+                <p>Good Food. Slow Moments. Great Memories.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================================================================== -->
+    <!-- GALLERY LIGHTBOX MODAL (WITH PREV / NEXT & KEYBOARD SUPPORT)          -->
+    <!-- ===================================================================== -->
+    <div id="gallery-lightbox" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-forest-dark/85 backdrop-blur-xs" role="dialog" aria-modal="true" aria-labelledby="lightbox-photo-title">
+        <div class="bg-cream-card rounded-3xl max-w-3xl w-full border border-cream-line shadow-editorial-lg overflow-hidden">
+            <div class="px-6 py-4 bg-forest text-cream flex items-center justify-between gap-4">
+                <div>
+                    <span id="lightbox-photo-category" class="text-[11px] font-bold uppercase tracking-widest text-ember-glow"></span>
+                    <h3 id="lightbox-photo-title" class="font-editorial text-xl sm:text-2xl font-bold text-white"></h3>
+                </div>
+                <button type="button" onclick="closeGalleryLightbox()" aria-label="Close Lightbox" class="p-2 rounded-xl text-cream/80 hover:text-white hover:bg-forest-light transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="relative bg-forest-dark aspect-[16/10] w-full overflow-hidden flex items-center justify-center">
+                <img id="lightbox-photo-img" src="" alt="" onerror="handleMediaFallback(this, 'plate', 'w-20 h-20 text-ember-glow')" class="w-full h-full object-cover">
+            </div>
+
+            <div class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <p id="lightbox-photo-caption" class="text-xs sm:text-sm text-ink-muted leading-relaxed"></p>
+                <div class="flex items-center gap-2 shrink-0">
+                    <button type="button" onclick="stepLightbox(-1)" aria-label="Previous Photo" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold bg-cream hover:bg-cream-warm text-forest border border-cream-line transition-colors">
+                        <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                        <span>Prev</span>
+                    </button>
+                    <button type="button" onclick="stepLightbox(1)" aria-label="Next Photo" class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-bold bg-ember hover:bg-ember-hover text-white transition-colors">
+                        <span>Next</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- JAVASCRIPT ARCHITECTURE (js/script.js)                                -->
+    <!-- Menu tabs/filtering, gallery & lightbox, reservation & WhatsApp logic -->
+    <!-- ===================================================================== -->
+    <script>
+        /* js/script.js — TASTE & THYME Interactive Application Logic */
+        const RESTAURANT_WHATSAPP_NUMBER = '919840011223';
+
+        const MENU_CATEGORIES = [
+            'All',
+            'Breakfast',
+            'Starters',
+            'Main Course',
+            'Desserts',
+            'Beverages'
+        ];
+
+        const CATEGORY_CARDS = [
+            {
+                category: 'Breakfast',
+                subtitle: 'Morning bakes, sourdough & eggs',
+                countLabel: '3 items',
+                image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=700&q=80',
+                fallbackType: 'plate'
+            },
+            {
+                category: 'Starters',
+                subtitle: 'Small plates & warm breads',
+                countLabel: '2 items',
+                image: 'https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=700&q=80',
+                fallbackType: 'plate'
+            },
+            {
+                category: 'Main Course',
+                subtitle: 'Hearth plates, bowls & flatbreads',
+                countLabel: '3 items',
+                image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80',
+                fallbackType: 'plate'
+            },
+            {
+                category: 'Desserts',
+                subtitle: 'Fruit tarts, bakes & sweet finishes',
+                countLabel: '2 items',
+                image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=80',
+                fallbackType: 'bakery'
+            },
+            {
+                category: 'Beverages',
+                subtitle: 'Single-origin coffee & botanicals',
+                countLabel: '2 items',
+                image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80',
+                fallbackType: 'coffee'
+            }
+        ];
+
+        const MENU_CATALOG = [
+            {
+                id: 'bk-1',
+                name: 'Sourdough Tartine & Soft-Scrambled Eggs',
+                category: 'Breakfast',
+                price: '₹420',
+                dietary: ['Vegetarian'],
+                signature: true,
+                pairing: 'Spiced Citrus Cold Brew',
+                image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80',
+                fallbackType: 'plate',
+                description: 'Thick-cut country sourdough topped with creamy herb-folded eggs, blistered cherry tomatoes, and shaved aged cheese.'
+            },
+            {
+                id: 'bk-2',
+                name: 'Cardamom & Orange Blossom Morning Bun',
+                category: 'Breakfast',
+                price: '₹240',
+                dietary: ['Vegetarian', 'Chef Signature'],
+                signature: true,
+                pairing: 'Single-Origin Oat Cortado',
+                image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80',
+                fallbackType: 'bakery',
+                description: 'Warm spiral brioche dusted with crushed green cardamom, raw cane sugar, and fragrant citrus zest.'
+            },
+            {
+                id: 'bk-3',
+                name: 'Spiced Oats, Roasted Fig & Walnut Bowl',
+                category: 'Breakfast',
+                price: '₹360',
+                dietary: ['Vegetarian', 'Vegan'],
+                signature: false,
+                pairing: 'Garden Thyme & Lemon Cooler',
+                image: 'https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=800&q=80',
+               
+    <script src="script.js" defer></script>

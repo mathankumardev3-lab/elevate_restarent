@@ -1,0 +1,99 @@
+:root {
+    --color-forest: #263D2B;
+    --color-forest-dark: #1A2B1E;
+    --color-forest-light: #36553D;
+    --color-cream: #F7F2E8;
+    --color-cream-card: #FCF9F3;
+    --color-cream-warm: #EFE7D6;
+    --color-orange: #D97745;
+    --color-orange-hover: #BE6131;
+    --color-ink: #292821;
+    --color-ink-muted: #575449;
+    --border-hairline: rgba(38, 61, 43, 0.14);
+    --radius-card: 1.25rem;
+    --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+    color: var(--color-ink);
+    background-color: var(--color-cream);
+}
+
+body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.65;
+}
+
+/* Subtle botanical paper texture */
+.bg-botanical-grain {
+    background-image:
+        radial-gradient(rgba(38, 61, 43, 0.065) 1px, transparent 1px),
+        radial-gradient(rgba(217, 119, 69, 0.045) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(252, 249, 243, 0.78) 0%, rgba(247, 242, 232, 0.94) 100%);
+    background-size: 28px 28px, 56px 56px, 100% 100%;
+    background-position: 0 0, 14px 14px, 0 0;
+}
+
+/* Editorial botanical divider rule */
+.editorial-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #D97745;
+}
+.editorial-divider::before,
+.editorial-divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    max-width: 3.5rem;
+    background: linear-gradient(90deg, rgba(217, 119, 69, 0.75), rgba(38, 61, 43, 0.16));
+}
+
+/* Editorial card & photo hover motion */
+.editorial-card {
+    border-radius: var(--radius-card);
+    transition: transform 0.34s var(--ease-editorial),
+                box-shadow 0.34s var(--ease-editorial),
+                border-color 0.25s ease,
+                background-color 0.25s ease;
+}
+
+.editorial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 24px 48px -16px rgba(38, 61, 43, 0.19), 0 10px 22px -10px rgba(217, 119, 69, 0.16);
+}
+
+.photo-zoom-frame img {
+    transition: transform 0.7s var(--ease-editorial), filter 0.4s ease;
+}
+
+.editorial-card:hover .photo-zoom-frame img,
+.group:hover .photo-zoom-frame img {
+    transform: scale(1.06);
+    filter: saturate(1.06) contrast(1.02);
+}
+
+/* Active navigation indicator */
+.nav-link.is-active {
+    color: #E68C5C;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+    background: #C5CEBE;
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-orange);
+}
